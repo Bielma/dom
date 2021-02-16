@@ -35,7 +35,10 @@ class Observable {
     notify(data) {
 
         this.observersValue.forEach(observer => {
-            observer.innerText = data.target.value
+            data.target.type != 'checkbox' ?
+                observer.innerText = data.target.value :
+                observer.innerText = data.target.checked
+
 
         });
         this.observersEvent.forEach(observer => {
