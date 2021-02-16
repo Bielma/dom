@@ -1,0 +1,22 @@
+{
+    "input": {
+        "value": "",
+        "event": "click"
+    },
+    "cbx": {
+        "checked": true,
+        "event": "blur"
+    },
+    "range": {
+        "value": 284500,
+        "event": "mouseleave"
+    },
+    "date": {
+        "value": 284500,
+        "event": "focus"
+    },
+    "color": {
+        "value": "#eeb5b5",
+        "event": "hover"
+    }
+}

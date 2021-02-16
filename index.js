@@ -1,4 +1,7 @@
 //import Observable from './Observable'
+//import data from './data.json'
+
+
 
 class Observable {
 
@@ -56,8 +59,8 @@ class Observable {
 }
 
 const observable = new Observable(document.getElementById('input'))
-observable.subscribeValue(document.getElementById('valueInp'))
-observable.subscribeEvent(document.getElementById('eventInp'))
+observable.subscribeValue(document.getElementById('valueInput'))
+observable.subscribeEvent(document.getElementById('eventInput'))
 
 const observable2 = new Observable(document.getElementById('cbx'))
 observable2.subscribeValue(document.getElementById('valueCbx'))
@@ -89,6 +92,58 @@ function clearDom() {
         item.type === 'checkbox' ? item.checked = false : item.value = ''
 
 
+    }
+
+}
+
+function loadJson() {
+
+    const json =
+        `
+    {
+        "input": {
+            "value": "Lorem ipsum",
+            "event": "click"
+        },
+        "cbx": {
+            "value": true,
+            "event": "blur"
+        },
+        "range": {
+            "value": 284500,
+            "event": "mouseleave"
+        },
+        "date": {
+            "value": "2021-02-11",
+            "event": "focus"
+        },
+        "color": {
+            "value": "#eeb5b5",
+            "event": "hover"
+        }
+    }`
+
+    data = JSON.parse(json)
+    const tds = document.getElementsByClassName('tds')
+    const inputs = document.getElementsByClassName('inputs')
+
+    //let evento = new Event('click');
+    for (let item of inputs) {
+
+        item.type === 'checkbox' ? item.checked = data[item.id].value : item.value = data[item.id].value
+
+        for (let td of tds) {
+            if (td.id.toLowerCase().slice(5) === item.id) {
+                td.id.slice(0, 5) === 'value' ?
+
+                    td.innerText = data[item.id].value :
+                    td.innerText = data[item.id].event
+            }
+
+
+        }
+
+        //  item.dispatchEvent(evento)
     }
 
 }
