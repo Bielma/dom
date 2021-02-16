@@ -1,3 +1,5 @@
+//import Observable from './Observable'
+
 class Observable {
 
     constructor(observable) {
@@ -12,13 +14,6 @@ class Observable {
                 });
             }
         }
-
-
-        /*
-                cbx.addEventListener('change', (event) => {
-                    console.log(event)
-                    this.notifyCxb(cbx.checked)
-                });*/
 
     }
 
@@ -57,33 +52,40 @@ class Observable {
 
 }
 
+const observable = new Observable(document.getElementById('input'))
+observable.subscribeValue(document.getElementById('valueInp'))
+observable.subscribeEvent(document.getElementById('eventInp'))
 
-class Observer {
+const observable2 = new Observable(document.getElementById('cbx'))
+observable2.subscribeValue(document.getElementById('valueCbx'))
+observable2.subscribeEvent(document.getElementById('eventCbx'))
+
+const observable3 = new Observable(document.getElementById('range'))
+observable3.subscribeValue(document.getElementById('valueRange'))
+observable3.subscribeEvent(document.getElementById('eventRange'))
+
+const observable4 = new Observable(document.getElementById('date'))
+observable4.subscribeValue(document.getElementById('valueDate'))
+observable4.subscribeEvent(document.getElementById('eventDate'))
+
+const observable5 = new Observable(document.getElementById('color'))
+observable5.subscribeValue(document.getElementById('valueColor'))
+observable5.subscribeEvent(document.getElementById('eventColor'))
 
 
+
+function clearDom() {
+
+    const tds = document.getElementsByClassName('tds')
+
+    for (let item of tds) {
+        item.innerText = ' '
+    }
+    const inputs = document.getElementsByClassName('inputs')
+    for (let item of inputs) {
+        item.type === 'checkbox' ? item.checked = false : item.value = ''
+
+
+    }
 
 }
-
-const inp = document.getElementById('input')
-const cbx = document.getElementById('cbx')
-const range = document.getElementById('range')
-const date = document.getElementById('date')
-const color = document.getElementById('color')
-
-const valueInp = document.getElementById('valueInp')
-const eventInp = document.getElementById('eventInp')
-const valueCbx = document.getElementById('valueCbx')
-const valueDate = document.getElementById('valueDate')
-const valueRange = document.getElementById('valueRange')
-const valueColor = document.getElementById('valueColor')
-
-
-const observable = new Observable(inp)
-observable.subscribeValue(valueInp)
-observable.subscribeEvent(eventInp)
-
-
-
-
-
-//dom.innerText = 'era con asignacion xd'

@@ -19,67 +19,67 @@
             </tr>
             <tr>
                 <td>
-                    <input id="input" type="text">
+                    <input id="input" type="text" class="inputs">
                 </td>
-                <td id="valueInp">
+                <td id="valueInp" class="tds">
 
                 </td>
-                <td id="eventInp">
-
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input id="cbx" type="checkbox">
-                </td>
-                <td id="valueCbx">
-
-                </td>
-                <td id="eventCbx">
+                <td id="eventInp" class="tds">
 
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="range" id="range" min="50000" max="500000" step="100" value="250000">
+                    <input id="cbx" type="checkbox" class="inputs" checked>
                 </td>
-                <td id="valueRange">
+                <td id="valueCbx" class="tds">
 
                 </td>
-                <td id="eventRange">
-
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <input type="date" name="myDate" min="2013-06-01" max="2013-08-31" step="7" id="myDate">
-                </td>
-                <td id="valueDate">
-
-                </td>
-                <td id="eventDate">
+                <td id="eventCbx" class="tds">
 
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="color" name="color" id="color">
+                    <input type="range" id="range" min="50000" max="500000" step="100" value="250000" class="inputs">
                 </td>
-                <td id="valueColor">
+                <td id="valueRange" class="tds">
 
                 </td>
-                <td id="eventColor">
+                <td id="eventRange" class="tds">
+
+                </td>
+            </tr>
+
+            <tr>
+                <td class="">
+                    <input type="date" id="date" class="inputs">
+                </td>
+                <td id="valueDate" class="tds">
+
+                </td>
+                <td id="eventDate" class="tds">
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="color" name="color" id="color" class="inputs">
+                </td>
+                <td id="valueColor" class="tds">
+
+                </td>
+                <td id="eventColor" class="tds">
 
                 </td>
             </tr>
 
 
         </table>
-        <button>Borrar</button>
-        <button>Json</button>
+        <button onclick=clearDom()>Borrar</button>
+        <button onclick="loadJson">Json</button>
     </main>
-    <script src="index.js">
+    <script src="index.js"></script>
     </script>
 </body>
 
